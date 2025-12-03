@@ -1,6 +1,5 @@
 import WhiteContent from "@/components/pages/white/home";
 import HeaderScript from "@/components/header-script";
-import MetaPixel from "@/components/meta-pixel";
 import { getUserLayer } from "@/utils/get-user-layer";
 import { LayerProvider } from "@/context/layer-provider";
 import type { Metadata } from "next";
@@ -50,7 +49,6 @@ export default async function Layout({
             <HeaderScript content={content} />
           </>
         )}
-        {isProduction && <MetaPixel />}
         {userLayer === 1 ?
           <WhiteContent />
         : (
