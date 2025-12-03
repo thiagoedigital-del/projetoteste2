@@ -39,6 +39,7 @@ export default function Balance({
 
   // SET COMPONENT DATA
   const balanceData = balance[content || 'kim'];
+  const pageData = balanceData[page] || balanceData[1] || { start: 0, end: 0 };
 
   return (
     <div className="flex items-center gap-3 rounded-lg border-dashed border-2 shadow-sm p-3 text-green-600 border-green-300 bg-white">
@@ -46,7 +47,7 @@ export default function Balance({
         <Wallet size={22} />
       </span>
       <span className="text-2xl font-semibold leading-none">
-        US$ <CountUp start={balanceData[page].start} end={balanceData[page].end} duration={3000} />
+        US$ <CountUp start={pageData.start} end={pageData.end} duration={3000} />
       </span>
     </div>
   );

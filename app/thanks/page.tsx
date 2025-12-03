@@ -1,9 +1,15 @@
 import Link from "next/link";
 import Logo from "@/components/logo";
+import PurchaseTracker from "@/components/purchase-tracker";
 
 export default async function Page() {
   return (
     <div className="flex flex-auto flex-col font-medium gap-6">
+      <PurchaseTracker 
+        value={24.90} 
+        currency="USD" 
+        contentName="Jen Selter's Personalized Plan"
+      />
       <div className="bg-green-600 text-white">
         <div className="mx-auto px-4 sm:px-6 py-4 space-y-4 font-medium">
           <div className="text-sm text-center font-semibold">

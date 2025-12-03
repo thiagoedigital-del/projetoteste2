@@ -6,6 +6,7 @@ import Image from "next/image";
 import Script from "next/script";
 import { Loader2 } from "lucide-react";
 import { useEffect, useState } from "react";
+import { metaPixel, isMetaPixelLoaded } from "@/utils/meta-pixel";
 // import { Nunito_Sans } from "next/font/google";
 
 /*
@@ -42,6 +43,13 @@ export default function HotmartCheckout() {
           hideCouponOption: '1',
         }
       }).mount('#inline_checkout');
+      
+      // Rastrear início do checkout no Meta Pixel (aguardar carregamento)
+      setTimeout(() => {
+        if (isMetaPixelLoaded()) {
+          metaPixel.initiateCheckout(24.90, 'USD', "Jen Selter's Personalized Plan");
+        }
+      }, 500);
     } else {
       console.error("checkoutElements is not available.");
     };
