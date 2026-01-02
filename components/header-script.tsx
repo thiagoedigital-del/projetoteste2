@@ -31,7 +31,7 @@ export default function HeaderScript({ content }: { content: string }) {
         data-utmify-prevent-subids
         async
         defer
-      />
+      ></script>
     </>
   );
   
