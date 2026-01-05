@@ -26,12 +26,12 @@ export default function HeaderScript({ content }: { content: string }) {
         src="https://cdn.utmify.com.br/scripts/pixel/pixel.js"
         strategy="afterInteractive"
       />
-      <script
+      <Script
+        id="utmify-utms"
         src="https://cdn.utmify.com.br/scripts/utms/latest.js"
         data-utmify-prevent-subids
-        async
-        defer
-      ></script>
+        strategy="afterInteractive"
+      />
     </>
   );
   
