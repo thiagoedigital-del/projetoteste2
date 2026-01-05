@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 // LOCAL TEST PARAM
-const localTestParam = 'JSvEyAogeImhnLAP';
+const localTestParam = 'JSvEyAogeImhnTHX';
 
 // PARAM LIST
 const paramList: Record<string, string> = {
