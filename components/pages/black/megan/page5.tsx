@@ -3,7 +3,7 @@ import Comments from "@/components/comments";
 import PlacesAlert from '@/components/places-alert';
 import VSLBlackMegan from "@/components/videos/vsl-black-megan";
 import { useLayer } from '@/context/layer-provider';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { CheckCheck, Loader2 } from 'lucide-react';
 
 export default function Page({
@@ -29,6 +29,16 @@ export default function Page({
   const videoId = "693201b82c6468ef65057c76";
   const backLink = `https://${userHost}/promo`;
   const pitchTime = 630;
+
+  // BUILD FRONT LINK WITH UTM PARAMETERS
+  const frontLinkWithParams = useMemo(() => {
+    if (typeof window === 'undefined') return userFrontLink;
+    const currentParams = document.location.search.replace('?', '');
+    if (!currentParams) return userFrontLink;
+    
+    const separator = userFrontLink.indexOf('?') > 0 ? '&' : '?';
+    return userFrontLink.trim() + separator + currentParams;
+  }, [userFrontLink]);
 
   // VIDEO VERIFY
   useEffect(() => {
@@ -76,7 +86,7 @@ export default function Page({
       <div className="flex flex-col items-center gap-8 relative -mt-4">
         <VSL />
         {visible && (
-          <a href={userFrontLink}>
+          <a href={frontLinkWithParams}>
             <Button
               onClick={handleClick}
               disabled={active}
