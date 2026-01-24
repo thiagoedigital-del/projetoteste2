@@ -54,11 +54,11 @@ export async function getUserLayer({
     return 1;
   };
 
-  // COUNTRY FILTER
-  if (blockedCountryList.includes(country)) {
-    console.log('WHITE CONTENT: COUNTRY');
-    return 1;
-  };
+  // COUNTRY FILTER - TEMPORARIAMENTE DESABILITADO PARA TESTE
+  // if (blockedCountryList.includes(country)) {
+  //   console.log('WHITE CONTENT: COUNTRY');
+  //   return 1;
+  // };
 
   const isMobile = /android|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent);
 
@@ -68,11 +68,11 @@ export async function getUserLayer({
     return 2;
   };
 
-  // LANGUAGE FILTER
-  if (blockedLanguageList.includes(userLanguage)) {
-    console.log('GRAY CONTENT: LANGUAGE');
-    return 2;
-  };
+  // LANGUAGE FILTER - TEMPORARIAMENTE DESABILITADO PARA TESTE
+  // if (blockedLanguageList.includes(userLanguage)) {
+  //   console.log('GRAY CONTENT: LANGUAGE');
+  //   return 2;
+  // };
 
   const isFBIG = isFacebookOrInstagramBrowser(hdrs, url);
 
