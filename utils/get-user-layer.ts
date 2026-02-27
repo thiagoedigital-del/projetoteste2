@@ -5,7 +5,7 @@ import { isFacebookOrInstagramBrowser } from '@/utils/browser-detector';
 
 // SET FILTER DATA
 const blockedCountryList = ['RU', 'KP', 'IR'];
-const blockedLanguageList = ['pt-br'];
+const blockedLanguageList: string[] = []; // pt-br removido para testes no Brasil
 
 // BOT DETECT
 function isBot(userAgent: string): boolean {
