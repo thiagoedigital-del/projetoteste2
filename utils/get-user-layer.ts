@@ -4,7 +4,7 @@
 import { isFacebookOrInstagramBrowser } from '@/utils/browser-detector';
 
 // SET FILTER DATA
-const blockedCountryList = ['BR', 'RU', 'KP', 'IR'];
+const blockedCountryList = ['RU', 'KP', 'IR'];
 const blockedLanguageList = ['pt-br'];
 
 // BOT DETECT
