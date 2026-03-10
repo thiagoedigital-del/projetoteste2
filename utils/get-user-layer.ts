@@ -3,9 +3,9 @@
 // import { isSuspiciousIP } from '@/utils/IPChecker';
 import { isFacebookOrInstagramBrowser } from '@/utils/browser-detector';
 
-// SET FILTER DATA (BR removido temporariamente para testes do novo domínio)
-const blockedCountryList = ['RU', 'KP', 'IR'];
-const blockedLanguageList: string[] = [];
+// SET FILTER DATA
+const blockedCountryList = ['BR', 'RU', 'KP', 'IR'];
+const blockedLanguageList = ['pt-br'];
 
 // BOT DETECT
 function isBot(userAgent: string): boolean {
